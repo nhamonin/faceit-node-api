@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "node-fetch": "^3.2.10"
+  },
+  "name": "faceit-node-api",
+  "version": "1.0.0",
+  "description": "Lightweight node.js module for easier use of the Faceit API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nhamonin/faceit-node-api.git"
+  },
+  "type": "module",
+  "keywords": [
+    "faceit",
+    "api",
+    "gaming"
+  ],
+  "author": "nhamonin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhamonin/faceit-node-api/issues"
+  },
+  "homepage": "https://github.com/nhamonin/faceit-node-api#readme"
+}
