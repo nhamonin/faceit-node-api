@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "dotenv": "^16.0.2",
     "node-fetch": "^3.2.10"
   },
   "name": "faceit-node-api",
@@ -25,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/nhamonin/faceit-node-api/issues"
   },
-  "homepage": "https://github.com/nhamonin/faceit-node-api#readme"
+  "homepage": "https://github.com/nhamonin/faceit-node-api#readme",
+  "prettier": {
+    "singleQuote": true
+  }
 }

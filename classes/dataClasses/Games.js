@@ -1,19 +1,19 @@
 import Faceit from '../Faceit.js';
 
 export default class Games extends Faceit {
-    constructor() {
-        super('games');
-    }
+  constructor() {
+    super('games');
+  }
 
-    getAllDetailsOnAllGames(config) {
-        return this.processRequest(null, { config });
-    }
+  getAllDetailsOnAllGames(queryparams) {
+    return this.processRequest(null, queryparams);
+  }
 
-    getGameDetails(game_id) {
-        return this.processRequest(`/${game_id}`);
-    }
+  getGameDetails(game_id) {
+    return this.processRequest(`/${game_id}`);
+  }
 
-    getAllDetailsOfTheParentGame(game_id) {
-        return this.processRequest(`/${game_id}/parent`);
-    }
+  getAllDetailsOfTheParentGame(game_id) {
+    return this.processRequest(`/${game_id}/parent`);
+  }
 }

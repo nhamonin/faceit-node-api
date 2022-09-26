@@ -1,31 +1,34 @@
 import Faceit from '../Faceit.js';
 
 export default class Leaderboards extends Faceit {
-    constructor() {
-        super('leaderboards');
-    }
+  constructor() {
+    super('leaderboards/');
+  }
 
-    getAllLeaderboardsOfAChampionship(championship_id, config) {
-        return this.processRequest(`/championships/${championship_id}`, config);
-    }
+  getAllLeaderboardsOfAChampionship(championship_id, queryparams) {
+    return this.processRequest(`championships/${championship_id}`, queryparams);
+  }
 
-    getGroupRankingOfAChampionship(championship_id, group, config) {
-        return this.processRequest(`/championships/${championship_id}/groups/${group}`, config);
-    }
+  getGroupRankingOfAChampionship(championship_id, group, queryparams) {
+    return this.processRequest(
+      `championships/${championship_id}/groups/${group}`,
+      queryparams
+    );
+  }
 
-    getAllLeaderboardsOfAHub(hub_id, config) {
-        return this.processRequest(`/leaderboards/hubs/${hub_id}`, config);
-    }
+  getAllLeaderboardsOfAHub(hub_id, queryparams) {
+    return this.processRequest(`hubs/${hub_id}`, queryparams);
+  }
 
-    getAllTimeRankingOfAHub(hub_id, config) {
-        return this.processRequest(`/leaderboards/hubs/${hub_id}/general`, config);
-    }
+  getAllTimeRankingOfAHub(hub_id, queryparams) {
+    return this.processRequest(`hubs/${hub_id}/general`, queryparams);
+  }
 
-    getSeasonalRankingOfAHub(hub_id, season, config) {
-        return this.processRequest(`/leaderboards/hubs/${hub_id}/seasons/${season}`, config);
-    }
+  getSeasonalRankingOfAHub(hub_id, season, queryparams) {
+    return this.processRequest(`hubs/${hub_id}/seasons/${season}`, queryparams);
+  }
 
-    getRankingFromALeaderBoardID(leaderboard_id, config) {
-        return this.processRequest(`/leaderboards/${leaderboard_id}`, config);
-    }
+  getRankingFromALeaderboardID(leaderboard_id, queryparams) {
+    return this.processRequest(leaderboard_id, queryparams);
+  }
 }
