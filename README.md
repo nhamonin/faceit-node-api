@@ -18,7 +18,7 @@ players.getPlayerDetailsByNickname('your_nickname')
     // do something with recieved players data from the Faceit API
   })
 
-tournaments.getMatchesOfATournament('tournament_id', { limit: 20, offset: 10 })
+tournaments.getMatchesOfATournament('your_tournament_id', { limit: 20, offset: 10 })
   .then((data) => {
     // do something with recieved tournaments data from the Faceit API
   })
