@@ -3,7 +3,7 @@
     "node-fetch": "^3.2.10"
   },
   "name": "faceit-node-api",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Lightweight node.js module for easier use of the Faceit Data API.",
   "main": "index.js",
   "scripts": {
