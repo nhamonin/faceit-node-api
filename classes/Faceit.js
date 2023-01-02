@@ -4,11 +4,12 @@ export default class Faceit {
   constructor(path) {
     this.apiUrl = `https://open.faceit.com/data/v4/${path}`;
     this.path = null;
+    this.currentFaceitAPIKeyIndex = 0;
   }
 
-  static _apiKey;
-  static setApiKey(apiKey) {
-    Faceit._apiKey = apiKey;
+  static apiKeys;
+  static setApiKeys(apiKeys) {
+    Faceit._apiKeys = apiKeys;
   }
 
   processRequest(uri, queryparams) {
@@ -18,7 +19,7 @@ export default class Faceit {
     return fetch(`${this.apiUrl}${uri || ''}${queryParams}`, {
       method: 'GET',
       headers: {
-        Authorization: `Bearer ${Faceit._apiKey}`,
+        Authorization: `Bearer ${this._getFaceitApiKey()}`,
         'Content-Type': 'application/json',
       },
     })
@@ -32,5 +33,15 @@ export default class Faceit {
         throw new Error(`${http_status || ''} ${message}`);
       })
       .catch((e) => e);
+  }
+
+  _getFaceitApiKey() {
+    if (this.currentFaceitAPIKeyIndex >= Faceit._apiKeys.length) {
+      this.currentFaceitAPIKeyIndex = 0;
+    }
+
+    const apiKey = Faceit._apiKeys[this.currentFaceitAPIKeyIndex++];
+
+    return apiKey;
   }
 }
