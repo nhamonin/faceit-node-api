@@ -5,8 +5,9 @@
   "name": "faceit-node-api",
   "version": "2.0.1",
   "description": "Lightweight node.js module for easier use of the Faceit Data API.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "prepublishOnly": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
