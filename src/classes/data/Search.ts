@@ -1,11 +1,18 @@
 import Faceit from '../Faceit.js';
 
+import { QueryParams } from '@interfaces';
+
 export default class Search extends Faceit {
   constructor() {
     super('search/');
   }
 
-  searchForChampionships(name, game, region, queryparams) {
+  searchForChampionships(
+    name: string,
+    game: string,
+    region: string,
+    queryparams: QueryParams
+  ) {
     return this.processRequest('championships', {
       name,
       game,
@@ -14,15 +21,20 @@ export default class Search extends Faceit {
     });
   }
 
-  searchForHubs(name, game, queryparams) {
+  searchForHubs(name: string, game: string, queryparams: QueryParams) {
     return this.processRequest('hubs', { name, game, ...queryparams });
   }
 
-  searchForOrganizers(name, queryparams) {
+  searchForOrganizers(name: string, queryparams: QueryParams) {
     return this.processRequest('organizers', { name, ...queryparams });
   }
 
-  searchForPlayers(nickname, game, country, queryparams) {
+  searchForPlayers(
+    nickname: string,
+    game: string,
+    country: string,
+    queryparams: QueryParams
+  ) {
     return this.processRequest('players', {
       nickname,
       game,
@@ -31,11 +43,16 @@ export default class Search extends Faceit {
     });
   }
 
-  searchForTeams(nickname, game, queryparams) {
+  searchForTeams(nickname: string, game: string, queryparams: QueryParams) {
     return this.processRequest('teams', { nickname, game, ...queryparams });
   }
 
-  searchForTournaments(name, game, region, queryparams) {
+  searchForTournaments(
+    name: string,
+    game: string,
+    region: string,
+    queryparams: QueryParams
+  ) {
     return this.processRequest('tournaments', {
       name,
       game,

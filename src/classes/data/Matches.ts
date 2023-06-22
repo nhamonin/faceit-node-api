@@ -5,11 +5,11 @@ export default class Matches extends Faceit {
     super('matches/');
   }
 
-  getMatchDetails(match_id) {
+  getMatchDetails(match_id: string) {
     return this.processRequest(match_id);
   }
 
-  getStatisticsOfAMatch(match_id) {
+  getStatisticsOfAMatch(match_id: string) {
     return this.processRequest(`${match_id}/stats`);
   }
 }
