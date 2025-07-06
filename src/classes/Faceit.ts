@@ -1,5 +1,3 @@
-import fetch, { Response } from 'node-fetch';
-
 import { ApiResponse, QueryParams } from '@interfaces';
 
 export default class Faceit {
@@ -16,7 +14,7 @@ export default class Faceit {
 
   async processRequest(
     uri: string | null,
-    queryparams?: QueryParams
+    queryparams?: QueryParams,
   ): Promise<ApiResponse> {
     const params = queryparams ? transformQueryParams(queryparams) : {};
     const paramsString = new URLSearchParams(params).toString();
@@ -43,6 +41,6 @@ export default class Faceit {
 
 function transformQueryParams(params: QueryParams): Record<string, string> {
   return Object.fromEntries(
-    Object.entries(params).map(([key, value]) => [key, String(value)])
+    Object.entries(params).map(([key, value]) => [key, String(value)]),
   );
 }

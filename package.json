@@ -1,13 +1,12 @@
 {
-  "dependencies": {
-    "node-fetch": "^3.2.10"
-  },
   "name": "faceit-node-api",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Lightweight node.js module for easier use of the Faceit Data API.",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublishOnly": "tsc",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,5 +27,10 @@
   "homepage": "https://github.com/nhamonin/faceit-node-api#readme",
   "prettier": {
     "singleQuote": true
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "prettier": "^3.6.2"
   }
 }
